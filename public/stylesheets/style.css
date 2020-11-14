@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.teamDiv {
+    justify-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+}
