@@ -1,8 +1,50 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: dodgerblue;
+	background-image: url(../images/background_blend.jpg);
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+#logo {
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 100px;
+}
+
+.teamName {
+	font: 30px "Georgia", Helvetica, Arial, sans-serif;
+	font-style: oblique;
+}
+
+.teamDiv {
+    justify-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+}
+
+.teamRows {
+	float: left;
+	width: 50%;
+}
+
+.teamsDiv{
+	display: flex;
+}
+
+footer{
+	text-align: center;
+	display: block;
+	background-color: lightgray;
+	display: stretch;
+	height: 150px;
+	margin: 0;
+	width: 100%;
 }
