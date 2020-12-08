@@ -4,6 +4,7 @@ body {
 	background-color: dodgerblue;
 	background-image: url(../images/background_blend.jpg);
 	background-repeat: no-repeat;
+	background-size: 100% 1000px;
 	margin: 0;
 	padding: 0;
 }
@@ -13,6 +14,7 @@ a {
 }
 
 #logo {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 100px;
@@ -48,3 +50,11 @@ footer{
 	margin: 0;
 	width: 100%;
 }
+
+.errorDiv {
+	justify-content: center;
+    align-items: center;
+    display: block;
+    text-align: center;
+}
+

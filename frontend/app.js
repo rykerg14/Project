@@ -9,15 +9,37 @@ var teamsRouter = require('./routes/teams');
 
 var app = express();
 
-const MongoClient = require('mongodb').MongoClient;
+var teamsJSON = undefined
+var playersJSON = undefined
 
-const uri = "mongodb+srv://admin:sunless@rocketleague.39ina.mongodb.net/rocketleague?retryWrites=true&w=majority";
+const { MongoClient } = require("mongodb");
+// Connection URI
+const uri =
+  "mongodb+srv://admin:sunless@rocketleague.39ina.mongodb.net/rocketleague?retryWrites=true&w=majority";
+// Create a new MongoClient
+const client = new MongoClient(uri, {useUnifiedTopology: true});
+async function run() {
+  try {
+    // Connect the client to the server
+	await client.connect();
+    // Establish and verify connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Connected successfully to server");
 
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log("Connected to databse");
-});
+    var db = client.db('rldb')
+
+	db.collection('players').find().toArray(function(err, docs) {
+    	playersJSON = docs;
+	});
+	db.collection('teams').find().toArray(function(err, docs) {
+    	teamsJSON = docs;
+	});
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +52,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/teams', teamsRouter);
+// app.use('/teams', teamsRouter);
+
+app.get('/teams', function (req, res) {
+	res.render('teams')
+});
 
 
 // catch 404 and forward to error handler
