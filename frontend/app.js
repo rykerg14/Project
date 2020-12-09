@@ -52,11 +52,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/teams', teamsRouter);
+app.use('/teams', teamsRouter);
 
-app.get('/teams', function (req, res) {
-	res.render('teams')
-});
+
 
 
 // catch 404 and forward to error handler
