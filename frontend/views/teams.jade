@@ -2,5 +2,11 @@ extends layout
 
 block content
     body
+        <p id="teamid"></p>
+        <script>var team = location.search.split("?")[1]</script>
+        <script>var test = team.toString().replace(/\+/g," ").replace('=','')</script>
+        <script>console.log(test)</script>
+        <script>teamName = team[0] + " " + team[1].split("=")[0]</script>
+        <script>document.getElementById("teamid").innerHTML = test</script>
         <a class="homeButton" href="/" role="button" type="submit">Home</a>
     

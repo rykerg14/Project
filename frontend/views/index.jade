@@ -7,36 +7,48 @@ block content
     body
         div(class="teamsDiv")
             div(class="teamRows")
-                <form action="/teams" method="POST" class="form-signin full-width text-center">
+                <form action="/teams" method="GET">
                 div(class="teamDiv" id="Northern")
-                    <button class="teamName" type="submit">Northern Gaming</button>
+                    <button class="teamName" name="Northern Gaming" type="submit">Northern Gaming</button>
                     img(src="images/NorthernGaming.png" alt="Northern Gaming Logo" height=200 width=200) 
                 </form>
                 div(class="teamDiv" id="Flipside")
-                    <form action="/teams" method="POST" class="form-signin full-width text-center">
-                    <button class="teamName">Flipside Tactics</button>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="Flipside Tactics" type="submit">Flipside Tactics</button>
                     img(src="images/Flipside.png" alt="Flipside Tactics Logo" height=200 width=200) 
                     </form>
                 div(class="teamDiv" id="Mockit")
-                    <p class="teamName">Mock-It eSports</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="Mock-It eSports" type="submit">Mock-It eSports</button>
                     img(src="images/Mockit.png" alt="Mock-It eSports Logo" height=200 width=200)
+                    </form>
                 div(class="teamDiv" id="Dutchmen")
-                    <p class="teamName">The Flying Dutchmen</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="The Flying Dutchmen" type="submit">The Flying Dutchmen</button>
                     img(src="images/Dutchmen.png" alt="The Flying Dutchmen Logo" height=200 width=200)
+                    </form>
 
             div(class="teamRows")
                 div(class="teamDiv" id="Kings")
-                    <p class="teamName">Kings of Urban</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="Kings of Urban" type="submit">Kings of Urban</button>
                     img(src="images/Kings.png" alt="Kings of Urban Logo" height=200 width=200)
+                    </form>
                 div(class="teamDiv" id="Exodus")
-                    <p class="teamName">Exodus</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="Exodus" type="submit">Exodus</button>
                     img(src="images/Exodus.png" alt="Exodus Logo" height=200 width=200)
+                    </form>
                 div(class="teamDiv" id="Power")
-                    <p class="teamName">iBUYPOWER</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="iBUYPOWER" type="submit">iBUYPOWER</button>
                     img(src="images/Power.png" alt="iBUYPOWER Logo" height=200 width=200)
+                    </form>
                 div(class="teamDiv" id="Genesis")
-                    <p class="teamName">Genesis</p>
+                    <form action="/teams" method="GET">
+                    <button class="teamName" name="Genesis" type="submit">Genesis</button>
                     img(src="images/Genesis.png" alt="Genesis Logo" height=200 width=200)
+                    </form>
 
         <form action="/teams" method="POST" class="form-signin full-width text-center">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Subscribe</button>
