@@ -14,10 +14,11 @@ a {
 }
 
 #logo {
-	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
+	height: 50%;
+	width: 50%;
 }
 
 .teamName {
@@ -44,7 +45,7 @@ a {
 footer{
 	text-align: center;
 	display: block;
-	background-color: lightgray;
+	background-color: #3366ff;
 	display: stretch;
 	height: 150px;
 	margin: 0;

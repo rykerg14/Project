@@ -9,37 +9,29 @@ var teamsRouter = require('./routes/teams');
 
 var app = express();
 
-var teamsJSON = undefined
-var playersJSON = undefined
+var dbName = 'rldb';
 
 const { MongoClient } = require("mongodb");
 // Connection URI
-const uri =
-  "mongodb+srv://admin:sunless@rocketleague.39ina.mongodb.net/rocketleague?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:sunless@rocketleague.39ina.mongodb.net/rocketleague?retryWrites=true&w=majority";
 // Create a new MongoClient
 const client = new MongoClient(uri, {useUnifiedTopology: true});
-async function run() {
-  try {
-    // Connect the client to the server
-	await client.connect();
-    // Establish and verify connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
+MongoClient.connect(
+  uri,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (err, client) => {
+    if (err) {
+      console.log(err);
+      throw err;
+    }
 
-    var db = client.db('rldb')
+    console.log("Connected successfully to Mongodb");
 
-	db.collection('players').find().toArray(function(err, docs) {
-    	playersJSON = docs;
-	});
-	db.collection('teams').find().toArray(function(err, docs) {
-    	teamsJSON = docs;
-	});
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+    const db = client.db(dbName);
+
+    app.locals.db = db;
   }
-}
-run().catch(console.dir);
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
