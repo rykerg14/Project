@@ -41,11 +41,18 @@ router.get('/teams', async (req, res) => {
 						name1: playerData[0]['name'],
 						name2: playerData[1]['name'],
 						name3: playerData[2]['name'],
+						flag1: playerData[0]['fl_image'],
+						flag2: playerData[1]['fl_image'],
+						flag3: playerData[2]['fl_image'],
 						teamName: teamData['name'],
 						standing: teamData['standing'],
 						stats1: playerData[0]['stats'],
 						stats2: playerData[1]['stats'],
-						stats3: playerData[2]['stats']});
+						stats3: playerData[2]['stats'],
+						avg1: ((playerData[0]['stats'][0] + playerData[1]['stats'][0] + playerData[2]['stats'][0]) / 3).toFixed(1),
+						avg2: ((playerData[0]['stats'][1] + playerData[1]['stats'][1] + playerData[2]['stats'][1]) / 3).toFixed(1),
+						avg3: ((playerData[0]['stats'][2] + playerData[1]['stats'][2] + playerData[2]['stats'][2]) / 3).toFixed(1),
+						avg4: ((playerData[0]['stats'][3] + playerData[1]['stats'][3] + playerData[2]['stats'][3]) / 3).toFixed(1)});
 });
 
 module.exports = router;

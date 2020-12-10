@@ -4,7 +4,6 @@ block content
     body
         <p id="teamid"></p>
         <p>#{tm}</p>
-<<<<<<< HEAD
         //- <script>var team = location.search.split("?")[1]</script>
         //- <script>var test = team.toString().replace(/\+/g," ").replace('=','')</script>
         //- <script>console.log(test)</script>
@@ -17,54 +16,24 @@ block content
         </div>
         <div id='allPlayers' class="allPlayers">
         <div id='playerCard' class="playerCard">
-        <p class="playerName">#{name1}</p>
-=======
-        <script>var team = location.search.split("?")[1]</script>
-        <script>var test = team.toString().replace(/\+/g," ").replace('=','')</script>
-        <script>console.log(test)</script>
-        <script>teamName = team[0] + " " + team[1].split("=")[0]</script>
-        <script>document.getElementById("teamid").innerHTML = test</script>
-        <p>Here is a paragrpah#{picture}</p>
-        <div id='playerCard'>
-        <p>Username: #{name1}</p>
-        <p>Real name: #{realname1}</p>
-        <p>Goals/game: #{goals1}</p>
-        <p>Assists/game: #{assists1}</p>
-        <p>Saves/game: #{saves1}</p>
-        <p>Shots/game: #{shots1}</p>
->>>>>>> 5bc22838a3701bfa11d2b65041a5491ed55c9ebb
+        <div class="nameflag">
+        <p class="playerName">#{name1}
+        <img height=14px width=22px src='images/flags/#{flag1}'>
+        </p>
+        </div>
         <img height=300px width=300px src='images/players/#{pic1}'>
-        <img height=140px width=220px src='images/flags/#{flag1}'>
         </div>
-<<<<<<< HEAD
         <div id='playerCard' class="playerCard">
-        <p class="playerName">#{name2}</p>
-=======
-        <div id='playerCard'>
-        <p>Username: #{name2}</p>
-        <p>Real name: #{realname2}</p>
-        <p>Goals/game: #{goals2}</p>
-        <p>Assists/game: #{assists2}</p>
-        <p>Saves/game: #{saves2}</p>
-        <p>Shots/game: #{shots2}</p>
->>>>>>> 5bc22838a3701bfa11d2b65041a5491ed55c9ebb
+        <p class="playerName">#{name2}
+        <img height=14px width=22px src='images/flags/#{flag2}'>
+        </p>
         <img height=300px width=300px src='images/players/#{pic2}'>
-        <img height=140px width=220px src='images/flags/#{flag2}'>
         </div>
-<<<<<<< HEAD
         <div id='playerCard' class="playerCard">
-        <p class="playerName">#{name3}</p>
-=======
-        <div id='playerCard'>
-        <p>Username: #{name3}</p>
-        <p>Real name: #{realname3}</p>
-        <p>Goals/game: #{goals3}</p>
-        <p>Assists/game: #{assists3}</p>
-        <p>Saves/game: #{saves3}</p>
-        <p>Shots/game: #{shots3}</p>
->>>>>>> 5bc22838a3701bfa11d2b65041a5491ed55c9ebb
+        <p class="playerName">#{name3}
+        <img height=14px width=22px src='images/flags/#{flag3}'>
+        </p>
         <img height=300px width=300px src='images/players/#{pic3}'>
-        <img height=140px width=220px src='images/flags/#{flag3}'>
         </div>
         </div>
         <div style="text-align: center;">
@@ -98,8 +67,38 @@ block content
         <td>#{stats3[2]}</td>
         <td>#{stats3[3]}</td>
         </tr>
+        <tr>
+        <td>Average</td>
+        <td>#{avg1}</td>
+        <td>#{avg2}</td>
+        <td>#{avg3}</td>
+        <td>#{avg4}</td>
+        </tr>
         </table>
         </div>
+        <label for="editname">Choose a name to edit:</label>
+
+        <select name="editname" id="editname">
+        <option value="name1">#{name1}</option>
+        <option value="name2">#{name2}</option>
+        <option value="name3">#{name3}</option>
+        </select>
+
+        
+
+        <script> function f() {
+        var t = document.getElementById("textbox").value;
+        document.getElementById("justtext").innerHTML = t;
+        };
+        </script>
+
+        <h1 class="justtext">Hi</h1>
+
+        <div id="box">
+        <input type="text" id="textbox" placeholder="Enter new name"/>
+        <button onclick="f()" type="button" id="newname">Submit</button>
+        </div>
+        
         //- <script>console.log('images/players/#{picture}')</script>
         <a class="homeButton" href="/" role="button" type="submit">Home</a>
     
