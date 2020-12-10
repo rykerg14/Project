@@ -23,7 +23,7 @@ router.get('/teams', async (req, res) => {
     	if (err) throw err;
     	db.close();
 	}});
-	console.log(teamData)
+	console.log(teamData['standing'])
 
 	players = teamData['players']
 	playerData = []
@@ -33,32 +33,19 @@ router.get('/teams', async (req, res) => {
     	db.close();
 	}}));
 	}
-	console.log(playerData[0]['name'])
+	console.log(playerData[0]['stats'])
 	res.render("teams", { title: teamData['name'], 
-						name1: playerData[0]['name'],
-						name2: playerData[1]['name'],
-						name3: playerData[2]['name'],
-						realname1: playerData[0]['real_name'],
-						realname2: playerData[1]['real_name'],
-						realname3: playerData[2]['real_name'],
-						goals1: playerData[0]['stats'][0],
-						goals2: playerData[1]['stats'][0],
-						goals3: playerData[2]['stats'][0],
-						assists1: playerData[0]['stats'][1],
-						assists2: playerData[1]['stats'][1],
-						assists3: playerData[2]['stats'][1],
-						saves1: playerData[0]['stats'][2],
-						saves2: playerData[1]['stats'][2],
-						saves3: playerData[2]['stats'][2],
-						shots1: playerData[0]['stats'][3],
-						shots2: playerData[1]['stats'][3],
-						shots3: playerData[2]['stats'][3],
 						pic1: playerData[0]['image'], 
 						pic2: playerData[1]['image'], 
 						pic3: playerData[2]['image'],
-						flag1: playerData[0]['fl_image'],
-					    flag2: playerData[1]['fl_image'],
-				        flag3: playerData[2]['fl_image']});
+						name1: playerData[0]['name'],
+						name2: playerData[1]['name'],
+						name3: playerData[2]['name'],
+						teamName: teamData['name'],
+						standing: teamData['standing'],
+						stats1: playerData[0]['stats'],
+						stats2: playerData[1]['stats'],
+						stats3: playerData[2]['stats']});
 });
 
 module.exports = router;
