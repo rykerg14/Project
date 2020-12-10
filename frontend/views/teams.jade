@@ -1,5 +1,8 @@
 extends layout
 
+
+
+
 block content
     body
         <p id="teamid"></p>
@@ -37,7 +40,6 @@ block content
         </div>
         </div>
         <div style="text-align: center;">
-        //- <p>name: "#{name1}"</p>
         <table class="statstable">
         <tr>
         <th>Name</th>
@@ -75,7 +77,9 @@ block content
         <td>#{avg4}</td>
         </tr>
         </table>
-        </div>
+        </div><br><br>
+
+        <div id="box" class="editName">
         <label for="editname">Choose a name to edit:</label>
 
         <select name="editname" id="editname">
@@ -84,14 +88,12 @@ block content
         <option id="oldname3">#{name3}</option>
         </select>
 
-        
-
         <script> function f() { var t = document.getElementById("editname").value + " -> " + document.getElementById("textbox").value; document.getElementById("justtext").innerHTML = t; };
         </script>
 
+        
         <h1 id="justtext"></h1>
-
-        <div id="box">
+        //-<script type="text/javascript" src="/scripts/update.js"></script>
         <input type="text" id="textbox" placeholder="Enter new name"/>
         <button onclick="f()" type="button" id="newname">Submit</button>
         </div>

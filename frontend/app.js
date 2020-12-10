@@ -46,6 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/teams', teamsRouter);
 
+app.use("/scripts", express.static('./scripts'));
+
 
 
 
