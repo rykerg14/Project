@@ -79,20 +79,17 @@ block content
         <label for="editname">Choose a name to edit:</label>
 
         <select name="editname" id="editname">
-        <option value="name1">#{name1}</option>
-        <option value="name2">#{name2}</option>
-        <option value="name3">#{name3}</option>
+        <option id="oldname1">#{name1}</option>
+        <option id="oldname2">#{name2}</option>
+        <option id="oldname3">#{name3}</option>
         </select>
 
         
 
-        <script> function f() {
-        var t = document.getElementById("textbox").value;
-        document.getElementById("justtext").innerHTML = t;
-        };
+        <script> function f() { var t = document.getElementById("editname").value + " -> " + document.getElementById("textbox").value; document.getElementById("justtext").innerHTML = t; };
         </script>
 
-        <h1 class="justtext">Hi</h1>
+        <h1 id="justtext"></h1>
 
         <div id="box">
         <input type="text" id="textbox" placeholder="Enter new name"/>
