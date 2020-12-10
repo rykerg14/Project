@@ -59,3 +59,37 @@ footer{
     text-align: center;
 }
 
+.playerName {
+	font-size:50px;
+}
+
+.playerCard {
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+}
+
+.allPlayers {
+	text-align: center;
+}
+
+.tname {
+	text-align: center;
+	font-size: 100px;
+	margin: 0px;
+}
+
+.ptext {
+	margin: 10px;
+}
+
+.ptextteam {
+	margin: 10px;
+	font-weight: bold;
+}
+
+.statstable {
+	font-size: large;
+	text-align: center;
+	display: inline-block;
+}

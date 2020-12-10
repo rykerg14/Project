@@ -23,7 +23,7 @@ router.get('/teams', async (req, res) => {
     	if (err) throw err;
     	db.close();
 	}});
-	console.log(teamData)
+	console.log(teamData['standing'])
 
 	players = teamData['players']
 	playerData = []
@@ -33,14 +33,19 @@ router.get('/teams', async (req, res) => {
     	db.close();
 	}}));
 	}
-	console.log(playerData[0]['name'])
+	console.log(playerData[0]['stats'])
 	res.render("teams", { title: teamData['name'], 
 						pic1: playerData[0]['image'], 
 						pic2: playerData[1]['image'], 
 						pic3: playerData[2]['image'],
 						name1: playerData[0]['name'],
 						name2: playerData[1]['name'],
-						name3: playerData[2]['name']});
+						name3: playerData[2]['name'],
+						teamName: teamData['name'],
+						standing: teamData['standing'],
+						stats1: playerData[0]['stats'],
+						stats2: playerData[1]['stats'],
+						stats3: playerData[2]['stats']});
 });
 
 module.exports = router;

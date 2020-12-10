@@ -4,24 +4,63 @@ block content
     body
         <p id="teamid"></p>
         <p>#{tm}</p>
-        <script>var team = location.search.split("?")[1]</script>
-        <script>var test = team.toString().replace(/\+/g," ").replace('=','')</script>
-        <script>console.log(test)</script>
-        <script>teamName = team[0] + " " + team[1].split("=")[0]</script>
-        <script>document.getElementById("teamid").innerHTML = test</script>
-        <p>Here is a paragrpah#{picture}</p>
-        <div id='playerCard'>
-        <p>#{name1}</p>
+        //- <script>var team = location.search.split("?")[1]</script>
+        //- <script>var test = team.toString().replace(/\+/g," ").replace('=','')</script>
+        //- <script>console.log(test)</script>
+        //- <script>teamName = team[0] + " " + team[1].split("=")[0]</script>
+        //- <script>document.getElementById("teamid").innerHTML = test</script>
+        //-<p>Here is a paragrpah#{picture}</p>
+        <div class="tname">
+        <p class="ptextteam">#{teamName}</p>
+        <p class="ptext" style="font-size: 50px;">Standing: #{standing}</p>
+        </div>
+        <div id='allPlayers' class="allPlayers">
+        <div id='playerCard' class="playerCard">
+        <p class="playerName">#{name1}</p>
         <img height=300px width=300px src='images/players/#{pic1}'>
         </div>
-        <div id='playerCard'>
-        <p>#{name2}</p>
+        <div id='playerCard' class="playerCard">
+        <p class="playerName">#{name2}</p>
         <img height=300px width=300px src='images/players/#{pic2}'>
         </div>
-        <div id='playerCard'>
-        <p>#{name3}</p>
+        <div id='playerCard' class="playerCard">
+        <p class="playerName">#{name3}</p>
         <img height=300px width=300px src='images/players/#{pic3}'>
         </div>
-        <script>console.log('images/players/#{picture}')</script>
+        </div>
+        <div style="text-align: center;">
+        //- <p>name: "#{name1}"</p>
+        <table class="statstable">
+        <tr>
+        <th>Name</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Saves</th>
+        <th>Shots</th>
+        </tr>
+        <tr>
+        <td>#{name1}</td>
+        <td>#{stats1[0]}</td>
+        <td>#{stats1[1]}</td>
+        <td>#{stats1[2]}</td>
+        <td>#{stats1[3]}</td>
+        </tr>
+        <tr>
+        <td>#{name2}</td>
+        <td>#{stats2[0]}</td>
+        <td>#{stats2[1]}</td>
+        <td>#{stats2[2]}</td>
+        <td>#{stats2[3]}</td>
+        </tr>
+        <tr>
+        <td>#{name3}</td>
+        <td>#{stats3[0]}</td>
+        <td>#{stats3[1]}</td>
+        <td>#{stats3[2]}</td>
+        <td>#{stats3[3]}</td>
+        </tr>
+        </table>
+        </div>
+        //- <script>console.log('images/players/#{picture}')</script>
         <a class="homeButton" href="/" role="button" type="submit">Home</a>
     
